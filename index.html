@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nischal & Seema Wedding</title>
+<link rel="icon" type="image/jpeg" href="assets/icon-image-removebg.png">
+<link rel="apple-touch-icon" href="assets/icon-image-removebg.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+
+:root {
+  --primary: #9B1B30;       /* Silk Red */
+  --secondary: #C28840;     /* Antique Gold */
+  --accent: #046307;        /* Emerald */
+  --bg: #FAF3E0;            /* Cream */
+  --text-dark: #2C2C2C;
+  /* Richer tones */
+  --gold-deep: #B8860B;
+  --red-deep: #7A0F20;
+  --cream-warm: #F5E6D3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(160deg, var(--cream-warm) 0%, var(--bg) 40%, #EDE0D0 100%);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   INTRO SCREEN
+================================= */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 2s ease forwards;
+  animation-delay: 2s;
+}
+
+#intro svg {
+  width: 80px;
+  fill: var(--secondary);
+  animation: pulse 2s infinite;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* ===============================
+   HERO SECTION
+================================= */
+
+.hero {
+  min-height: 100vh;
+  /* Replace the url() below with your image: url('your-background-image.jpg') */
+  background: linear-gradient(rgba(155,27,48,0.35), rgba(122,15,32,0.4)),
+              url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1920');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero-card {
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-card .hero-symbols {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 28px;
+  display: block;
+}
+
+.hero p {
+  color: var(--cream-warm);
+  font-family: 'Cinzel Decorative', 'Playfair Display', serif;
+  font-size: 20px;
+}
+
+.hero h1 {
+  font-family: 'Cinzel Decorative', 'Playfair Display', serif;
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--cream-warm);
+  margin-bottom: 0;
+  letter-spacing: 0.02em;
+}
+
+.hero .scroll-prompt {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  color: var(--cream-warm);
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hero .scroll-prompt:hover {
+  transform: translateY(4px);
+  color: var(--bg);
+}
+
+.hero .scroll-prompt .scroll-line {
+  width: 1px;
+  height: 24px;
+  background: currentColor;
+  opacity: 0.8;
+}
+
+.hero .scroll-prompt svg {
+  width: 48px;
+  height: 48px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.hero h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   DETAILS SECTION
+================================= */
+
+.details {
+  padding: 60px 15px 30px 15px;
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.divider {
+  width: 80px;
+  height: 2px;
+  background: var(--secondary);
+  margin: 10px auto;
+}
+
+.details h3 {
+  font-size: 28px;
+  color: var(--primary);
+  font-family: 'Cinzel Decorative', 'Playfair Display', serif;
+}
+
+.details p {
+  font-size: 18px;
+  color: var(--text-dark);
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+/* ===============================
+   MAP SECTION
+================================= */
+
+.map-section {
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.map-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.map-card h3 {
+  font-size: 28px;
+  color: var(--primary);
+  font-family: 'Cinzel Decorative', 'Playfair Display', serif;
+}
+
+.map-card .venue-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.map-card .venue-address {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 30px;
+  background: var(--primary);
+  color: var(--cream-warm);
+  text-decoration: none;
+  font-size: 22px;
+  border-radius: 20px;
+  transition: 0.3s;
+  width: 100%;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.map-btn svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.map-btn:hover {
+  background: #7f1526;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+
+footer {
+  background: linear-gradient(135deg, var(--red-deep) 0%, var(--primary) 50%, #8B1E32 100%);
+  color: var(--cream-warm);
+  text-align: center;
+  padding: 48px 20px;
+  margin-top: 60px;
+  font-size: 20px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+  border-top: 3px solid var(--secondary);
+}
+
+/* ===============================
+   MOBILE
+================================= */
+
+@media(max-width: 600px) {
+  .hero {
+    padding: 10px 10px;
+  }
+  .hero h1 {
+    font-size: 64px;
+  }
+  .hero-card {
+    padding: 28px 20px 24px;
+  }
+  .hero-card .hero-symbols {
+    max-width: 150px;
+    margin-bottom: 22px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Intro Animation -->
+<div id="intro">
+  <!-- Simple Diya SVG -->
+  <svg viewBox="0 0 24 24">
+    <path d="M12 2C10 6 6 8 6 13a6 6 0 0012 0c0-5-4-7-6-11z"/>
+  </svg>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-card">
+    <div>
+      <img src="assets/hero-symbols-removebg-preview.png" alt="Chakra, Tilak & Shankha" class="hero-symbols">
+    </div>
+    <div>
+      <p>We cordially invite you to the wedding of</p>
+      <h1>Seema</h1>
+      <h1>&</h1>
+      <h1>Nischal</h1>
+      <a href="#details" class="scroll-prompt" aria-label="Scroll down">
+        <div class="scroll-line"></div>
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+        </svg>
+        <div class="scroll-line"></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Wedding Details -->
+<section class="details" id="details">
+  <div class="details-container">
+    <h3>Muhurtha</h3>
+    <div class="divider"></div>
+    <p>
+      Time: 6:30 AM<br>
+      Traditional South Indian Ceremony<br>
+      Followed by Breakfast
+    </p>
+  </div>
+  <div class="details-container">
+    <h3>Reception</h3>
+    <div class="divider"></div>
+    <p>
+      Time: 10:30 AM onwards<br>
+      Followed by Lunch at 10:30 AM onwards
+    </p>
+  </div>
+</section>
+
+<!-- Location Section (no API – just text + directions link) -->
+<section class="map-section">
+  <div class="map-card">
+    <h3>Venue Location</h3>
+    <div class="divider"></div>
+    <p class="venue-name">Dr. Bheem Rao Palace</p>
+    <p class="venue-address">Opp to Power House, Near ESI Hospital, West of Chord Road, Rajajinagar, Bengaluru – 560010</p>
+    <a href="https://maps.app.goo.gl/sGC1hzfym6FvFB6v8" target="_blank" rel="noopener" class="map-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+      </svg>
+      Get directions
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  With Love,<br>
+  Nischal & Seema
+</footer>
+
+<script>
+// Smooth fade-in sections
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      section.style.opacity = 1;
+      section.style.transform = "translateY(0)";
+    }
+  });
+});
+
+sections.forEach(section => {
+  section.style.opacity = 0;
+  section.style.transform = "translateY(30px)";
+  section.style.transition = "all 0.8s ease";
+});
+
+// Smooth scroll when clicking the hero arrow
+document.querySelector('.scroll-prompt')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('details')?.scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
