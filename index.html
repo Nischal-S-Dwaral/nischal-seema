@@ -385,21 +385,25 @@ footer {
 // Smooth fade-in sections
 const sections = document.querySelectorAll("section");
 
-window.addEventListener("scroll", () => {
+function revealSectionsInView() {
   sections.forEach(section => {
     const top = section.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
+    if (top < window.innerHeight - 100) {
       section.style.opacity = 1;
       section.style.transform = "translateY(0)";
     }
   });
-});
+}
 
 sections.forEach(section => {
   section.style.opacity = 0;
   section.style.transform = "translateY(30px)";
   section.style.transition = "all 0.8s ease";
 });
+
+// Reveal sections in view on load (so content shows after intro without needing to scroll)
+revealSectionsInView();
+window.addEventListener("scroll", revealSectionsInView);
 
 // Smooth scroll when clicking the hero arrow
 document.querySelector('.scroll-prompt')?.addEventListener('click', (e) => {
